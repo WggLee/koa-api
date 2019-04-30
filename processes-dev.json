@@ -1,6 +1,6 @@
 [
   {
-    "name": "biz_server",
+    "name": "bizServer",
     "script": "./servers/server.js",
     "exec_mode": "fork",
     "instances": 1,
@@ -12,7 +12,7 @@
     }
   },
   {
-    "name": "biz_server",
+    "name": "mqServer",
     "script": "./servers/mqServer.js",
     "exec_mode": "fork",
     "instances": 1,
@@ -24,7 +24,7 @@
     }
   },
   {
-    "name": "biz_server",
+    "name": "sendMQServer",
     "script": "./servers/sendMQServer.js",
     "exec_mode": "fork",
     "instances": 1,
