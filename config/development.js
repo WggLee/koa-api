@@ -27,7 +27,7 @@ const configModel = {
     bucket: 'yc-wechat'
   },
   mongoDB: {
-    url: 'mongodb://10.8.8.8/primary',
+    url: 'mongodb://127.0.0.1/primary',
     options: {
       useMongoClient: true,
       keepAlive: 1,

@@ -26,9 +26,9 @@ const CONFIG = {
 
 global._ = require('lodash')
 
-mongoose.Promise = global.Promise
+mongoose.Promise = global.Promise;
 
-;(function start () {
+(function start () {
   let router, app
   return Promise.resolve(true)
     .then(() => initMongDb())
@@ -51,12 +51,12 @@ mongoose.Promise = global.Promise
           .use(router.routes())
           .use(koaStatic('./statics'))
           .use(router.allowedMethods())
-      app.key = 'primary_school'
+      app.key = 'biz_server'
       app.use(session(CONFIG, app))
     })
     .then(() => {
       app.listen(staticConfigs.port, function () {
-        console.warn('primary-school server is running ~ ')
+        console.warn('biz server is running ~ ')
       })
     })
     .catch(err => console.error('server init error:', err))
