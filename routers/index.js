@@ -10,4 +10,12 @@ router.get('/', ctx => {
   ctx.body = 'primary-school server is running'
 })
 
+router.get('/index', async ctx => {
+  let info = {
+    id: '8989909',
+    msg: 'success'
+  }
+  ctx.body = {ok: true, info}
+})
+
 module.exports = router
