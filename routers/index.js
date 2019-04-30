@@ -7,7 +7,7 @@ const router = new KoaRouter()
 // const moment = require('moment')
 
 router.get('/', ctx => {
-  ctx.body = 'primary-school server is running'
+  ctx.body = 'server is running'
 })
 
 router.get('/index', async ctx => {
