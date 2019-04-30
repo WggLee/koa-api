@@ -4,7 +4,7 @@
   "description": "koa study by project",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon server.js",
+    "dev": "NODE_ENV=development nodemon servers/server.js",
     "prod": "NODE_ENV=production node server.js",
     "preinstall": "npm remove wormhole --no-save && npm update wormhole"
   },
@@ -48,7 +48,7 @@
     "qrcode": "^1.3.3",
     "redlock": "^3.1.2",
     "request": "^2.88.0",
-    "require-dir": "^0.3.2",
+    "require-dir": "^0.3.2"
   },
   "devDependencies": {
     "husky": "^1.0.0-rc.1",
