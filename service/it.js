@@ -9,8 +9,8 @@ const mysqlPool = require('../lib/mysqlPool')
  */
 exports.testMysql = async function (body) {
   let {pool, connection} = await mysqlPool.getConn()
-  console.log('pool:' + pool)
-  console.log('connection:' + connection)
+  console.log('pool:' + pool.toString())
+  console.log('connection:' + connection.toString())
   let sql = `select * from runoob_tbl  limit 0,1000`
   let res = await mysqlPool.doQuery(sql, pool, connection)
   return {ok: true, res}

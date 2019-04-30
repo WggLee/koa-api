@@ -15,7 +15,8 @@ router.get('/index', async ctx => {
     id: '8989909',
     msg: 'success'
   }
-  ctx.body = {ok: true, info}
+  let mysqlRes = await require('../service/it').testMysql(ctx.request.body)
+  ctx.body = {ok: true, info, mysqlRes}
 })
 
 module.exports = router
