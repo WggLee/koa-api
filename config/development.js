@@ -41,6 +41,18 @@ const configModel = {
     options: {
       expiresIn: 7200
     }
+  },
+  mysql: {
+    host: '127.0.0.1',
+    port: '3306',
+    database: 'test',
+    user: 'root',
+    password: 'root',
+    connectionLimit: 1200,
+    waitForConnections: true,
+    acquireTimeout: 3000,
+    charset: 'utf8mb4',
+    multipleStatements: true
   }
 }
 
