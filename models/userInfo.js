@@ -12,11 +12,7 @@ const UserInfoSchema = new Schema({
   openId: {
     type: String,
     required: true,
-    comment: '用户唯一身份标志'
-  },
-  userId: {
-    type: String,
-    comment: '用户在洋葱数学App中的userId'
+    comment: '用户的微信openId'
   },
   nickName: {
     type: String,
