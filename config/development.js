@@ -2,6 +2,8 @@
 
 const configModel = {
   port: process.env.NODE_PORT || 8000,
+  mqPort: process.env.NODE_PORT || 8001,
+  sendMQPort: process.env.NODE_PORT || 8002,
   wechat: {
     appId: 'wxeae6c171a983e1f4',
     appSecret: '2a4af6ea9cb089d243829338b3f86d6a',

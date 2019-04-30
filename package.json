@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon servers/server.js",
-    "prod": "NODE_ENV=production node server.js",
+    "mQ": "NODE_ENV=development nodemon servers/mqServer.js",
+    "sendMQ": "NODE_ENV=development nodemon servers/sendMQServer.js",
     "preinstall": "npm remove wormhole --no-save && npm update wormhole"
   },
   "repository": {

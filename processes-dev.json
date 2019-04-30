@@ -1,0 +1,38 @@
+[
+  {
+    "name": "biz_server",
+    "script": "./servers/server.js",
+    "exec_mode": "fork",
+    "instances": 1,
+    "merge_logs"  : true,
+    "watch": false,
+    "env": {
+      "NODE_PORT": 8000,
+      "NODE_ENV": "development"
+    }
+  },
+  {
+    "name": "biz_server",
+    "script": "./servers/mqServer.js",
+    "exec_mode": "fork",
+    "instances": 1,
+    "merge_logs"  : true,
+    "watch": false,
+    "env": {
+      "NODE_PORT": 8001,
+      "NODE_ENV": "development"
+    }
+  },
+  {
+    "name": "biz_server",
+    "script": "./servers/sendMQServer.js",
+    "exec_mode": "fork",
+    "instances": 1,
+    "merge_logs"  : true,
+    "watch": false,
+    "env": {
+      "NODE_PORT": 8002,
+      "NODE_ENV": "development"
+    }
+  }
+]

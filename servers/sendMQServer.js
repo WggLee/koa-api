@@ -6,23 +6,11 @@ const xmlParser = require('koa-xml-body')
 const koaStatic = require('koa-static')
 const mongoose = require('mongoose')
 const cors = require('koa2-cors')
-const session = require('koa-session')
 
 const initMongDb = require('../lib/initMongDb')
 const logger = require('../lib/httpLogger')
 const requestLog = require('../middlewares/requestLog')
 const staticConfigs = require('../config').loadConfigs
-
-const CONFIG = {
-  key: 'koa:sess',
-  maxAge: 7200000,
-  autoCommit: true,
-  overwrite: true,
-  httpOnly: true,
-  signed: true,
-  rolling: false,
-  renew: false
-}
 
 global._ = require('lodash')
 
@@ -51,19 +39,18 @@ mongoose.Promise = global.Promise;
           .use(router.routes())
           .use(koaStatic('./statics'))
           .use(router.allowedMethods())
-      app.key = 'biz_server'
-      app.use(session(CONFIG, app))
+      app.key = 'sendMQ_server'
     })
     .then(() => {
-      app.listen(staticConfigs.port, function () {
-        console.warn('biz server on:' + staticConfigs.port + ' is running ~ ')
+      app.listen(staticConfigs.sendMQPort, function () {
+        console.warn('sendMQ server on: ' + staticConfigs.sendMQPort + '  is running ~ ')
       })
     })
-    .catch(err => console.error('server init error:', err))
+    .catch(err => console.error('sendMQ server init error:', err))
 })()
 
 function gracefulShutDown () {
-  console.warn('App exit.')
+  console.warn('sendMQ server App exit.')
   process.exit(1)
 }
 
